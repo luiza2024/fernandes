@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculadora Básica</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            //Soma jQuery
+            $(document).ready(function () {
+                $("#botao-somar-jq").click(function () {
+                    var valor1 = parseFloat($("#valor-1").val());
+                    var valor2 = parseFloat($("#valor-2").val());
+                    var soma = valor1 + valor2;
+                    $("#resultado").text("Resultado: " + soma);
+                });
+            });
+
+            //Soma JavaScript
+            document.addEventListener("DOMContentLoaded", function () {
+                document
+                    .getElementById("botao-somar-js")
+                    .addEventListener("click", function () {
+                        var valor1 = parseFloat(
+                            document.getElementById("valor-1").value
+                        );
+                        var valor2 = parseFloat(
+                            document.getElementById("valor-2").value
+                        );
+                        var soma = valor1 + valor2;
+                        document.getElementById("resultado").innerText =
+                            "Resultado: " + soma;
+                    });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Calculadora básica (Soma)</h1>
+        <input type="number" id="valor-1" />
+        <br /><br />
+
+        <input type="number" id="valor-2" />
+        <br /><br />
+
+        <button id="botao-somar-jq">Somar jQ</button>
+        <button id="botao-somar-js">Somar JS</button>
+        <br />
+
+        <h2 id="resultado">Resultado:</h2>
+    </body>
+</html>
